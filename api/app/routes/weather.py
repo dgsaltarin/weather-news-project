@@ -1,5 +1,4 @@
 #PYTHON
-from pydantic import Json
 import requests
 import json
 #FASTAPI
