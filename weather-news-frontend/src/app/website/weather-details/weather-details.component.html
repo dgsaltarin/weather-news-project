@@ -1,0 +1,18 @@
+<mat-card class="mat-elevation-z5">
+  <mat-card-header>
+    <mat-card-title>London's weather</mat-card-title>
+    <mat-card-subtitle>Today: {{"22-02-2022" | date }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="flex-row">
+      <div class="temp">
+        <span class="big-text">{{35 | number:'0.0-0'}} C</span>
+        <span>Feels like </span>
+        <span>{{40 | number: '0.0-0'}} C</span>
+      </div>
+      <div class="outlook">
+        <span>nublado</span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
