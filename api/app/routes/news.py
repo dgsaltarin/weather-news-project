@@ -34,7 +34,7 @@ def get_city_news(city: str):
     """
     key_header = {"x-api-key": NEWS_APY_KEY}
     news_responde_raw = requests.get(f'https://api.newscatcherapi.com/v2/search?q={city}&page_size=10', headers=key_header)
-    if news_responde_raw.status_code == 404:
+    if news_responde_raw.status_code == 404 or news_responde_raw.status_code == 400:
         raise HTTPException(status_code=404, detail="Not news were found")
     news_responde_raw = json.loads(news_responde_raw.content.decode('utf-8'))['articles']   
     news_response: News = MapNews.mapObjectToNews(news_responde_raw)

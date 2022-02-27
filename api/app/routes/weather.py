@@ -39,7 +39,7 @@ def get_city_weather(city: str):
     Returns a weather object with the most relevant weather information of the required city
     """
     weather_responde_raw = requests.get(f'http://api.weatherapi.com/v1/current.json?key={WEATHER_APY_KEY}&q={city}')
-    if weather_responde_raw.status_code == 400 or 404:
+    if weather_responde_raw.status_code == 400 or weather_responde_raw.status_code == 404:
         raise HTTPException(status_code=404, detail="Location not found")
     weather_responde_raw = json.loads(weather_responde_raw.content.decode('utf-8'))    
     weather_response: Weather = MapWeather.mapObjectToWeather(weather_responde_raw)
