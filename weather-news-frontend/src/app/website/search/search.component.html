@@ -2,8 +2,8 @@
 <form class="example-form">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Current Location</mat-label>
-    <input matInput>
+    <input required matInput [formControl]="cityForm">
   </mat-form-field>
 </form>
-<button mat-raised-button color="primary">Search</button>
+<button mat-raised-button [disabled]="cityForm.invalid" (click)="getWeatherAndNews()" color="primary">Search</button>
 

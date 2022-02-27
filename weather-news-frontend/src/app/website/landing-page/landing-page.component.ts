@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
+  thereAreNews: boolean = false
+
   constructor() { }
 
   ngOnInit(): void {

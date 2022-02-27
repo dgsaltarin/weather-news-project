@@ -11,8 +11,8 @@ import {Weather} from "../models/weather.model";
 })
 export class HttpService {
 
-  URL_API_WEATHER: string = `${environment.API_WEATHER_NEWS_URL}/weather`;
-  URL_API_NEWS: string = `${environment.API_WEATHER_NEWS_URL}/news`;
+  URL_API_WEATHER: string = `${environment.API_WEATHER_NEWS_URL}/weather/weather`;
+  URL_API_NEWS: string = `${environment.API_WEATHER_NEWS_URL}/news/news`;
 
   constructor(
     private httpClient: HttpClient
@@ -21,7 +21,7 @@ export class HttpService {
   getWeather(city: string): Observable<Weather> {
     return this.httpClient.get(`${this.URL_API_WEATHER}/${city}`)
       .pipe(
-        map((response: any) => response.results as Weather),
+        map((response: any) => response as Weather),
         catchError(err => {throw new Error('Something went wrong with the weather');})
       );
   }
@@ -29,7 +29,7 @@ export class HttpService {
   getNews(city: string): Observable<News[]> {
     return this.httpClient.get(`${this.URL_API_NEWS}/${city}`)
       .pipe(
-        map((response: any) => response.results as News[]),
+        map((response: any) => response as News[]),
         catchError(err => {throw new Error('Something went wrong with the news');})
       );
   }

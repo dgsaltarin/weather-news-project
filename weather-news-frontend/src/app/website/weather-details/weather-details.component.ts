@@ -9,6 +9,8 @@ export class WeatherDetailsComponent implements OnInit {
 
   constructor() { }
 
+  today: number = Date.now()
+
   ngOnInit(): void {
   }
 
