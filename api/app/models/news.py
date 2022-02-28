@@ -7,4 +7,4 @@ class News(BaseModel):
     author: Optional[str]
     summary: str
     link: HttpUrl
-    media: HttpUrl
+    media: Optional[HttpUrl]
