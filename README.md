@@ -15,6 +15,7 @@ Some of the technologies that were used to build this solution are:
 - [Angular](https://angular.io/)
 - [NodeJs](https://nodejs.org/es/)
 - [AWS](https://aws.amazon.com/es/)
+- [Docker](https://www.docker.com/)
 
 ## Backend: 
 For the backend side of the application, was using python as main language, along with fastapi framework to build an API that provide the informtion, also is in charge of save the user search history into a mondoDB clouster
