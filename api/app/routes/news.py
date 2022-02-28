@@ -11,7 +11,7 @@ from app.utils.mapNews import MapNews
 #Models
 from ..models.news import News
 
-NEWS_APY_KEY = environ['news_api_key'] or 'L6o8h7xhThCghcZgfZIuKzB_WBfqRmETQ8BUBmjEMgw'
+NEWS_APY_KEY = environ['news_api_key']
 
 router = APIRouter()
 
@@ -33,7 +33,7 @@ def get_city_news(city: str):
     Returns a list with the result of the news
     """
     key_header = {"x-api-key": NEWS_APY_KEY}
-    news_responde_raw = requests.get(f'https://api.newscatcherapi.com/v2/search?q={city}&page_size=10', headers=key_header)
+    news_responde_raw = requests.get(f'https://api.newscatcherapi.com/v2/search?q={city}&page_size=12', headers=key_header)
     if news_responde_raw.status_code == 404 or news_responde_raw.status_code == 400:
         raise HTTPException(status_code=404, detail="Not news were found")
     news_responde_raw = json.loads(news_responde_raw.content.decode('utf-8'))['articles']   
