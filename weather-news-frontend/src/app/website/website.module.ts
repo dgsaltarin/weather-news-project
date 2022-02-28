@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { WebsiteRoutingModule } from "./landing-page/website-routing.module";
+import { WebsiteRoutingModule } from "./website-routing.module";
 import { SearchComponent } from './search/search.component';
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
 import { MatGridListModule } from '@angular/material/grid-list';

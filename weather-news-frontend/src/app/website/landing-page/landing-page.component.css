@@ -6,7 +6,20 @@ mat-grid-tile {
   max-width: 400px;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+.mat-card-image {
   background-size: cover;
+  max-width: 330px;
+  max-height: 180px;
+}
+
+.news-container {
+  border: solid black;
+}
+
+mat-card {
+  text-align: -webkit-center;
+}
+
+::ng-deep .mat-grid-tile-content {
+  align-items: self-start!important;
 }

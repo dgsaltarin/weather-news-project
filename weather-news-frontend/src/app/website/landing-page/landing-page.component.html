@@ -1,25 +1,21 @@
 <div class="container">
   <mat-grid-list cols="4" rowHeight="2:1">
     <mat-grid-tile colspan="2" rowspan="2">
-      <app-search></app-search>
+      <app-search (weatherInformation)="shareWeatherInformation($event)" (newsInformation)="renderNews($event)"></app-search>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="2">
-      <app-weather-details></app-weather-details>
+      <app-weather-details [weatherInformation]="weatherInformation"></app-weather-details>
     </mat-grid-tile>
-    <mat-grid-tile *ngIf="thereAreNews" colspan="1" rowspan="3">
-      <div class="news-container">
+    <mat-grid-tile colspan="1" rowspan="4" *ngFor="let article of newsInformation">
+      <div class="news-container" *ngIf="thereAreNews">
         <mat-card class="example-card">
           <mat-card-header>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            <mat-card-title>{{article.title}}</mat-card-title>
           </mat-card-header>
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-               alt="Photo of a Shiba Inu">
+          <img mat-card-image [src]="article.media">
           <mat-card-content>
             <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
+              {{article.summary}}
             </p>
           </mat-card-content>
         </mat-card>
